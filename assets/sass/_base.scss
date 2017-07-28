@@ -1,0 +1,56 @@
+hr{
+	margin: 0px;
+}
+/**FIRST SECTION**/
+.first-section{
+	div{
+		div{
+			margin: 0 0 5px;
+			div{
+				img{
+					@include imagenes();
+				}
+				h3{
+					@include textosNav();
+					color: $color-texto;
+				}
+			}
+			div{
+				.input-nav{
+					margin: 16px 0 0px;
+					background-color: $color-input;
+					border: $border-ra;
+					width: 95%;
+				}
+			}
+			div{
+				p{
+					display: inline-block;
+					padding: 0px 8px;
+					position: relative;
+    				top: 12px;
+    				color: $color-texto;
+				}
+				span{
+					@include notificaciones();
+				}
+			}
+		}
+	}
+}
+.user-img{
+	width: 33% !important;
+	display: inline-block !important;
+}
+.user-user{
+	@include textosNav();
+	color: $color-texto !important;
+}
+.fa-search{
+	padding: 14px 6px 16px;
+	background-color: $color-input;
+	color: #B6B6B6;
+}
+hr{
+	border: 1px solid $color-input;
+}
