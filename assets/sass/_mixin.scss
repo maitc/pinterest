@@ -1,0 +1,23 @@
+@mixin imagenes(){
+	width: 34%;
+	display: inline-block;
+	margin: 16px 0 0;
+    position: relative;
+    top: 7px;
+}
+@mixin textosNav(){
+	display: inline-block;
+	font-size: 15px;
+	padding: 0px 5px;
+}
+@mixin notificaciones(){
+	color: #fff;
+	border: 1px solid #BB0919;
+	background-color: #BB0919;
+	padding: 2px;
+	border-radius: 10px;
+	position: relative;
+	bottom: 34px;
+	left: 48px;
+	font-size: 12px;
+}
