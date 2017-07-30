@@ -8,7 +8,8 @@
 @mixin textosNav(){
 	display: inline-block;
 	font-size: 15px;
-	padding: 0px 5px;
+	font-weight: 700;
+	padding: 0px 4px;
 }
 @mixin notificaciones(){
 	color: #fff;
@@ -17,7 +18,27 @@
 	padding: 2px;
 	border-radius: 10px;
 	position: relative;
-	bottom: 34px;
-	left: 48px;
+	bottom: 0px;
+    right: 21px;
 	font-size: 12px;
+}
+@mixin titulosImg(){
+	font-size: 17px;
+	font-weight: 700;
+	color: #505050;
+	margin: 5px 0;
+}
+@mixin parrafosImg{
+	font-size: 12px;
+	font-weight: 300;
+	color: #505050;
+	margin: 3px 0;
+}
+@mixin usuarioImg(){
+	display: inline-block;
+	font-size: 12px;
+	color: #505050;
+}
+@mixin modal{
+	margin: 0 0 0 25px;
 }
