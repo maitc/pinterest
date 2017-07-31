@@ -20277,19 +20277,35 @@ $(document).ready(function(){
 				var infoPin = '<div class="caja-contenido caja-' + clases + '"><img src="dist/img/' + datos[i].image_url + '" class="img-json img-' + clases +' "><h4>' + datos[i].title + '</h4><p>' + datos[i].description + '</p><img src="assets/img/user_icon.png" class="user-icon circle"><h5>' + datos[i].username + '</h5><span>#' + datos[i].hashtag + '</span></div>';
 				$(".contenido-json").append(infoPin);
 			}
+			$(".caja-contenido").click(function(){
+				var imgPin = $(this).find(".img-json").attr("src");
+				var titlePin = $(this).find("h4").text();
+				var descriptionPin = $(this).find("p").text();
+				var usernamePin = $(this).find("h5").text();
+
+				var datosPin = '<div class="modalito"><div class="info-modal"><div class="nav-modal"><i class="fa fa-share-square-o" aria-hidden="true"></i><i class="fa fa-check" aria-hidden="true"></i><i class="fa fa-ellipsis-h" aria-hidden="true"></i><a class="boton-modal"><i class="fa fa-thumb-tack" aria-hidden="true"> Guardar</i></a></div><h4>' + titlePin + '</h4><div class="img-modal"><img src="' + imgPin + '" class="img-modal-img"></div><img src="assets/img/user_icon.png" class="user-icon-modal circle"><h5 class="username-modal">Usuario: <span class="user-name">' + usernamePin + '</span></h5><p><i class="fa fa-quote-left" aria-hidden="true"></i>' + descriptionPin + '<i class="fa fa-quote-right" aria-hidden="true"></i></p></div><img src="assets/img/close-lt.png" class="close-modal"></div>';
+
+				$(".container-modal").append(datosPin);
+
+				//funcion para cerrar
+				$(".close-modal").click(function(){
+					var div = $(".modalito");
+					$(div).addClass('modal-ghost');
+				});
+			});
 		}					
 	});
 	
 	/*MODAL*/
 	//en inspector cada modal tiene sus respectivos datos pero al hacer click para que aparezcan en el modal solo aparece la ultima (no conseguí resolverlo).
-	var modalPin = function(){
+	/*var modalPin = function(this){
 		datos.forEach(function(e){
 			var imgPin = e.image_url;
 			var titlePin = e.title;
 			var userPin = e.username;
 			var descripcionPin = e.description;
 
-			var datosPin = '<div class="modalito"><div class="info-modal"><div class="nav-modal"><i class="fa fa-share-square-o" aria-hidden="true"></i><i class="fa fa-check" aria-hidden="true"></i><i class="fa fa-ellipsis-h" aria-hidden="true"></i><a class="boton-modal"><i class="fa fa-thumb-tack" aria-hidden="true"> Guardar</i></a></div><h4>' + titlePin + '</h4><div class="img-modal"><img src="dist/img/' + imgPin + '" class="img-modal-img"></div><img src="assets/img/user_icon.png" class="user-icon-modal circle"><h5 class="username-modal">' + userPin + '</h5><p>' + descripcionPin + '</p><img src="assets/img/close-lt.png" class="close-modal"></div></div>';
+			var datosPin = '<div class="modalito"><div class="info-modal"><div class="nav-modal"><i class="fa fa-share-square-o" aria-hidden="true"></i><i class="fa fa-check" aria-hidden="true"></i><i class="fa fa-ellipsis-h" aria-hidden="true"></i><a class="boton-modal"><i class="fa fa-thumb-tack" aria-hidden="true"> Guardar</i></a></div><h4>' + titlePin + '</h4><div class="img-modal"><img src="dist/img/' + imgPin[i] + '" class="img-modal-img"></div><img src="assets/img/user_icon.png" class="user-icon-modal circle"><h5 class="username-modal">' + userPin + '</h5><p>' + descripcionPin + '</p><img src="assets/img/close-lt.png" class="close-modal"></div></div>';
 			$(".container-modal").append(datosPin);
 			$(".close-modal").click(function(){
 				var div = $(".modalito");
@@ -20297,7 +20313,24 @@ $(document).ready(function(){
 			});
 		});
 	};
-	$(".caja-contenido").click(modalPin);
+	$(".caja-contenido").click(modalPin);*/
+	$(".caja-contenido").click(function(){
+		//al clickear en caja se rescata los datos que estan en ella con find() y el attr (caso de la img) y los textos.
+		var imgPin = $(this).find(".img-json").attr("src");
+		var titlePin = $(this).find("h4").text();
+		var descriptionPin = $(this).find("p").text();
+		var usernamePin = $(this).find("h5").text();
+
+		var datosPin = '<div class="modalito"><div class="info-modal"><div class="nav-modal"><i class="fa fa-share-square-o" aria-hidden="true"></i><i class="fa fa-check" aria-hidden="true"></i><i class="fa fa-ellipsis-h" aria-hidden="true"></i><a class="boton-modal"><i class="fa fa-thumb-tack" aria-hidden="true"> Guardar</i></a></div><h4>' + titlePin + '</h4><div class="img-modal"><img src="' + imgPin + '" class="img-modal-img"></div><img src="assets/img/user_icon.png" class="user-icon-modal circle"><h5 class="username-modal">Usuario: <span class="user-name">' + usernamePin + '</span></h5><p><i class="fa fa-quote-left" aria-hidden="true"></i>' + descriptionPin + '<i class="fa fa-quote-right" aria-hidden="true"></i></p></div><img src="assets/img/close-lt.png" class="close-modal"></div>';
+
+		$(".container-modal").append(datosPin);
+
+		//funcion para cerrar
+		$(".close-modal").click(function(){
+			var div = $(".modalito");
+			$(div).addClass('modal-ghost');
+		});
+	});
 
 	/*SCROLL*/
 	/*$(window).scroll(function() {
