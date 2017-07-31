@@ -42,3 +42,13 @@
 @mixin modal{
 	margin: 0 0 0 25px;
 }
+@mixin hov(){
+	background-color: rgba(239, 239, 239, 0.9);
+    border-radius: 15px;
+}
+@mixin tags(){
+	border-radius: 5px;
+	color: white;
+	padding: 15px;
+	margin: 20px 3px 10px 2px;
+}
